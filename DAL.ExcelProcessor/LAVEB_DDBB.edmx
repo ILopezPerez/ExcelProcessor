@@ -1,0 +1,388 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="AVEB_ESModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="AVEB_ESModelStoreContainer">
+          <EntitySet Name="GEISIntermediaErratas" EntityType="AVEB_ESModel.Store.GEISIntermediaErratas" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="GEISIntermediaPacks" EntityType="AVEB_ESModel.Store.GEISIntermediaPacks" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="GEISIntermediaPacksHidden" EntityType="AVEB_ESModel.Store.GEISIntermediaPacksHidden" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="promoSmartClub" EntityType="AVEB_ESModel.Store.promoSmartClub" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="GEISIntermediaErratas">
+          <Key>
+            <PropertyRef Name="ItemName" />
+          </Key>
+          <Property Name="ItemName" Type="nvarchar" Nullable="false" MaxLength="10" />
+          <Property Name="ReferenciaPack" Type="nvarchar" MaxLength="10" />
+          <Property Name="NombrePack" Type="nvarchar" MaxLength="100" />
+          <Property Name="ItemDescription" Type="nvarchar" MaxLength="1000" />
+          <Property Name="Colaborador" Type="nvarchar" MaxLength="1000" />
+          <Property Name="Comunidad" Type="nvarchar" MaxLength="100" />
+          <Property Name="Provincia" Type="nvarchar" MaxLength="100" />
+          <Property Name="Pagina" Type="nvarchar" MaxLength="5" />
+          <Property Name="Errata" Type="nvarchar" MaxLength="2000" />
+        </EntityType>
+        <EntityType Name="GEISIntermediaPacks">
+          <Key>
+            <PropertyRef Name="Counter" />
+          </Key>
+          <Property Name="Counter" Type="int" Nullable="false" />
+          <Property Name="ItemCode" Type="nvarchar" MaxLength="30" />
+          <Property Name="ItemName" Type="nvarchar" MaxLength="100" />
+          <Property Name="ItemNameEpack" Type="nvarchar" MaxLength="50" />
+          <Property Name="ItemDescription" Type="nvarchar" MaxLength="1000" />
+          <Property Name="TCode" Type="nvarchar" MaxLength="10" />
+          <Property Name="ArticleCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="Pax_C" Type="nvarchar" MaxLength="256" />
+          <Property Name="ValidityDate" Type="datetime" />
+          <Property Name="ValidityDateText" Type="varchar" MaxLength="50" />
+          <Property Name="DescripcionCorta" Type="nvarchar" />
+          <Property Name="DescripcionLarga" Type="nvarchar" />
+          <Property Name="imgURL" Type="nvarchar" MaxLength="1000" />
+          <Property Name="imgPromoURL" Type="nvarchar" MaxLength="1000" />
+          <Property Name="imgURLepack" Type="nvarchar" MaxLength="500" />
+          <Property Name="RetailPrice" Type="numeric" Scale="6" />
+          <Property Name="SpecialPrice" Type="numeric" Scale="6" />
+          <Property Name="RetailPriceEPack" Type="numeric" Scale="6" />
+          <Property Name="GuiaOnlineURL" Type="nvarchar" MaxLength="2000" />
+          <Property Name="ProductosAsociados" Type="nvarchar" MaxLength="500" />
+          <Property Name="Mundo" Type="nvarchar" MaxLength="100" />
+          <Property Name="ShowBuyButton" Type="tinyint" />
+          <Property Name="NumExperiencias" Type="int" />
+          <Property Name="Experiencias" Type="nvarchar" MaxLength="1000" />
+          <Property Name="SETitle" Type="nvarchar" MaxLength="1000" />
+          <Property Name="SEDescription" Type="nvarchar" MaxLength="1000" />
+          <Property Name="SEKeywords" Type="nvarchar" MaxLength="1000" />
+          <Property Name="DescuentoMax" Type="numeric" Scale="6" />
+          <Property Name="friendlyURL" Type="nvarchar" MaxLength="1000" />
+        </EntityType>
+        <EntityType Name="GEISIntermediaPacksHidden">
+          <Key>
+            <PropertyRef Name="Counter" />
+          </Key>
+          <Property Name="Counter" Type="int" Nullable="false" />
+          <Property Name="ItemCode" Type="nvarchar" MaxLength="30" />
+          <Property Name="ItemName" Type="nvarchar" MaxLength="100" />
+          <Property Name="ItemNameEpack" Type="nvarchar" MaxLength="50" />
+          <Property Name="ItemDescription" Type="nvarchar" MaxLength="1000" />
+          <Property Name="TCode" Type="nvarchar" MaxLength="10" />
+          <Property Name="ArticleCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="Pax_C" Type="nvarchar" MaxLength="256" />
+          <Property Name="ValidityDate" Type="datetime" />
+          <Property Name="ValidityDateText" Type="varchar" MaxLength="50" />
+          <Property Name="DescripcionCorta" Type="nvarchar" />
+          <Property Name="DescripcionLarga" Type="nvarchar" />
+          <Property Name="imgURL" Type="nvarchar" MaxLength="1000" />
+          <Property Name="imgPromoURL" Type="nvarchar" MaxLength="1000" />
+          <Property Name="imgURLePack" Type="nvarchar" MaxLength="1000" />
+          <Property Name="RetailPrice" Type="numeric" Scale="6" />
+          <Property Name="SpecialPrice" Type="numeric" Scale="6" />
+          <Property Name="RetailPriceEPack" Type="numeric" Scale="6" />
+          <Property Name="GuiaOnlineURL" Type="nvarchar" MaxLength="2000" />
+          <Property Name="ProductosAsociados" Type="nvarchar" MaxLength="500" />
+          <Property Name="Mundo" Type="nvarchar" MaxLength="100" />
+          <Property Name="ShowBuyButton" Type="tinyint" />
+          <Property Name="NumExperiencias" Type="int" />
+          <Property Name="Experiencias" Type="nvarchar" MaxLength="1000" />
+          <Property Name="SETitle" Type="nvarchar" MaxLength="1000" />
+          <Property Name="SEDescription" Type="nvarchar" MaxLength="1000" />
+          <Property Name="SEKeywords" Type="nvarchar" MaxLength="1000" />
+          <Property Name="DescuentoMax" Type="numeric" Scale="6" />
+          <Property Name="friendlyURL" Type="nvarchar" MaxLength="1000" />
+        </EntityType>
+        <EntityType Name="promoSmartClub">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ID_Promo" Type="nvarchar" MaxLength="20" />
+          <Property Name="num_pagina" Type="int" />
+          <Property Name="nombreCompany" Type="nvarchar" MaxLength="800" />
+          <Property Name="universo" Type="nvarchar" MaxLength="200" />
+          <Property Name="direccion" Type="nvarchar" MaxLength="1000" />
+          <Property Name="codPostal" Type="nvarchar" MaxLength="20" />
+          <Property Name="localidad" Type="nvarchar" MaxLength="200" />
+          <Property Name="provincia" Type="nvarchar" MaxLength="200" />
+          <Property Name="comunidadAutonoma" Type="nvarchar" MaxLength="200" />
+          <Property Name="telefono" Type="nvarchar" MaxLength="200" />
+          <Property Name="sitioWeb" Type="nvarchar" MaxLength="200" />
+          <Property Name="email" Type="nvarchar" MaxLength="200" />
+          <Property Name="opcion1" Type="nvarchar(max)" />
+          <Property Name="opcion2" Type="nvarchar(max)" />
+          <Property Name="opcion3" Type="nvarchar(max)" />
+          <Property Name="opcion4" Type="nvarchar(max)" />
+          <Property Name="opcion5" Type="nvarchar(max)" />
+          <Property Name="opcion6" Type="nvarchar(max)" />
+          <Property Name="restricciones" Type="nvarchar(max)" />
+          <Property Name="masVentajas" Type="nvarchar(max)" />
+          <Property Name="infoPracticas" Type="nvarchar(max)" />
+          <Property Name="idFoto" Type="nvarchar" MaxLength="400" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="AVEB_ESModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="AVEB_ESEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="GEISIntermediaErratas" EntityType="AVEB_ESModel.GEISIntermediaErratas" />
+          <EntitySet Name="GEISIntermediaPacks" EntityType="AVEB_ESModel.GEISIntermediaPacks" />
+          <EntitySet Name="GEISIntermediaPacksHidden" EntityType="AVEB_ESModel.GEISIntermediaPacksHidden" />
+          <EntitySet Name="promoSmartClub" EntityType="AVEB_ESModel.promoSmartClub" />
+        </EntityContainer>
+        <EntityType Name="GEISIntermediaErratas">
+          <Key>
+            <PropertyRef Name="ItemName" />
+          </Key>
+          <Property Name="ItemName" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="ReferenciaPack" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="NombrePack" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="ItemDescription" Type="String" MaxLength="1000" Unicode="true" FixedLength="false" />
+          <Property Name="Colaborador" Type="String" MaxLength="1000" Unicode="true" FixedLength="false" />
+          <Property Name="Comunidad" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Provincia" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Pagina" Type="String" MaxLength="5" Unicode="true" FixedLength="false" />
+          <Property Name="Errata" Type="String" MaxLength="2000" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="GEISIntermediaPacks">
+          <Key>
+            <PropertyRef Name="Counter" />
+          </Key>
+          <Property Type="Int32" Name="Counter" Nullable="false" />
+          <Property Type="String" Name="ItemCode" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ItemName" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ItemNameEpack" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ItemDescription" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="TCode" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ArticleCode" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Pax_C" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="ValidityDate" />
+          <Property Type="String" Name="ValidityDateText" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DescripcionCorta" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DescripcionLarga" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="imgURL" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="imgPromoURL" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="imgURLepack" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="RetailPrice" Precision="18" Scale="6" />
+          <Property Type="Decimal" Name="SpecialPrice" Precision="18" Scale="6" />
+          <Property Type="Decimal" Name="RetailPriceEPack" Precision="18" Scale="6" />
+          <Property Type="String" Name="GuiaOnlineURL" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ProductosAsociados" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Mundo" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Byte" Name="ShowBuyButton" />
+          <Property Type="Int32" Name="NumExperiencias" />
+          <Property Type="String" Name="Experiencias" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SETitle" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SEDescription" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SEKeywords" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="DescuentoMax" Precision="18" Scale="6" />
+          <Property Type="String" Name="friendlyURL" MaxLength="1000" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="GEISIntermediaPacksHidden">
+          <Key>
+            <PropertyRef Name="Counter" />
+          </Key>
+          <Property Type="Int32" Name="Counter" Nullable="false" />
+          <Property Type="String" Name="ItemCode" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ItemName" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ItemNameEpack" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ItemDescription" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="TCode" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ArticleCode" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Pax_C" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="ValidityDate" />
+          <Property Type="String" Name="ValidityDateText" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DescripcionCorta" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DescripcionLarga" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="imgURL" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="imgPromoURL" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="imgURLePack" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="RetailPrice" Precision="18" Scale="6" />
+          <Property Type="Decimal" Name="SpecialPrice" Precision="18" Scale="6" />
+          <Property Type="Decimal" Name="RetailPriceEPack" Precision="18" Scale="6" />
+          <Property Type="String" Name="GuiaOnlineURL" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ProductosAsociados" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Mundo" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Byte" Name="ShowBuyButton" />
+          <Property Type="Int32" Name="NumExperiencias" />
+          <Property Type="String" Name="Experiencias" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SETitle" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SEDescription" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SEKeywords" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="DescuentoMax" Precision="18" Scale="6" />
+          <Property Type="String" Name="friendlyURL" MaxLength="1000" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="promoSmartClub">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="ID_Promo" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="num_pagina" />
+          <Property Type="String" Name="nombreCompany" MaxLength="800" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="universo" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="direccion" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="codPostal" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="localidad" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="provincia" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="comunidadAutonoma" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="telefono" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="sitioWeb" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="email" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="opcion1" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="opcion2" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="opcion3" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="opcion4" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="opcion5" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="opcion6" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="restricciones" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="masVentajas" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="infoPracticas" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="idFoto" MaxLength="400" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="AVEB_ESModelStoreContainer" CdmEntityContainer="AVEB_ESEntities">
+          <EntitySetMapping Name="GEISIntermediaErratas"><EntityTypeMapping TypeName="AVEB_ESModel.GEISIntermediaErratas"><MappingFragment StoreEntitySet="GEISIntermediaErratas">
+            <ScalarProperty Name="ItemName" ColumnName="ItemName" />
+            <ScalarProperty Name="ReferenciaPack" ColumnName="ReferenciaPack" />
+            <ScalarProperty Name="NombrePack" ColumnName="NombrePack" />
+            <ScalarProperty Name="ItemDescription" ColumnName="ItemDescription" />
+            <ScalarProperty Name="Colaborador" ColumnName="Colaborador" />
+            <ScalarProperty Name="Comunidad" ColumnName="Comunidad" />
+            <ScalarProperty Name="Provincia" ColumnName="Provincia" />
+            <ScalarProperty Name="Pagina" ColumnName="Pagina" />
+            <ScalarProperty Name="Errata" ColumnName="Errata" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="GEISIntermediaPacks">
+            <EntityTypeMapping TypeName="AVEB_ESModel.GEISIntermediaPacks">
+              <MappingFragment StoreEntitySet="GEISIntermediaPacks">
+                <ScalarProperty Name="friendlyURL" ColumnName="friendlyURL" />
+                <ScalarProperty Name="DescuentoMax" ColumnName="DescuentoMax" />
+                <ScalarProperty Name="SEKeywords" ColumnName="SEKeywords" />
+                <ScalarProperty Name="SEDescription" ColumnName="SEDescription" />
+                <ScalarProperty Name="SETitle" ColumnName="SETitle" />
+                <ScalarProperty Name="Experiencias" ColumnName="Experiencias" />
+                <ScalarProperty Name="NumExperiencias" ColumnName="NumExperiencias" />
+                <ScalarProperty Name="ShowBuyButton" ColumnName="ShowBuyButton" />
+                <ScalarProperty Name="Mundo" ColumnName="Mundo" />
+                <ScalarProperty Name="ProductosAsociados" ColumnName="ProductosAsociados" />
+                <ScalarProperty Name="GuiaOnlineURL" ColumnName="GuiaOnlineURL" />
+                <ScalarProperty Name="RetailPriceEPack" ColumnName="RetailPriceEPack" />
+                <ScalarProperty Name="SpecialPrice" ColumnName="SpecialPrice" />
+                <ScalarProperty Name="RetailPrice" ColumnName="RetailPrice" />
+                <ScalarProperty Name="imgURLepack" ColumnName="imgURLepack" />
+                <ScalarProperty Name="imgPromoURL" ColumnName="imgPromoURL" />
+                <ScalarProperty Name="imgURL" ColumnName="imgURL" />
+                <ScalarProperty Name="DescripcionLarga" ColumnName="DescripcionLarga" />
+                <ScalarProperty Name="DescripcionCorta" ColumnName="DescripcionCorta" />
+                <ScalarProperty Name="ValidityDateText" ColumnName="ValidityDateText" />
+                <ScalarProperty Name="ValidityDate" ColumnName="ValidityDate" />
+                <ScalarProperty Name="Pax_C" ColumnName="Pax_C" />
+                <ScalarProperty Name="ArticleCode" ColumnName="ArticleCode" />
+                <ScalarProperty Name="TCode" ColumnName="TCode" />
+                <ScalarProperty Name="ItemDescription" ColumnName="ItemDescription" />
+                <ScalarProperty Name="ItemNameEpack" ColumnName="ItemNameEpack" />
+                <ScalarProperty Name="ItemName" ColumnName="ItemName" />
+                <ScalarProperty Name="ItemCode" ColumnName="ItemCode" />
+                <ScalarProperty Name="Counter" ColumnName="Counter" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GEISIntermediaPacksHidden">
+            <EntityTypeMapping TypeName="AVEB_ESModel.GEISIntermediaPacksHidden">
+              <MappingFragment StoreEntitySet="GEISIntermediaPacksHidden">
+                <ScalarProperty Name="friendlyURL" ColumnName="friendlyURL" />
+                <ScalarProperty Name="DescuentoMax" ColumnName="DescuentoMax" />
+                <ScalarProperty Name="SEKeywords" ColumnName="SEKeywords" />
+                <ScalarProperty Name="SEDescription" ColumnName="SEDescription" />
+                <ScalarProperty Name="SETitle" ColumnName="SETitle" />
+                <ScalarProperty Name="Experiencias" ColumnName="Experiencias" />
+                <ScalarProperty Name="NumExperiencias" ColumnName="NumExperiencias" />
+                <ScalarProperty Name="ShowBuyButton" ColumnName="ShowBuyButton" />
+                <ScalarProperty Name="Mundo" ColumnName="Mundo" />
+                <ScalarProperty Name="ProductosAsociados" ColumnName="ProductosAsociados" />
+                <ScalarProperty Name="GuiaOnlineURL" ColumnName="GuiaOnlineURL" />
+                <ScalarProperty Name="RetailPriceEPack" ColumnName="RetailPriceEPack" />
+                <ScalarProperty Name="SpecialPrice" ColumnName="SpecialPrice" />
+                <ScalarProperty Name="RetailPrice" ColumnName="RetailPrice" />
+                <ScalarProperty Name="imgURLePack" ColumnName="imgURLePack" />
+                <ScalarProperty Name="imgPromoURL" ColumnName="imgPromoURL" />
+                <ScalarProperty Name="imgURL" ColumnName="imgURL" />
+                <ScalarProperty Name="DescripcionLarga" ColumnName="DescripcionLarga" />
+                <ScalarProperty Name="DescripcionCorta" ColumnName="DescripcionCorta" />
+                <ScalarProperty Name="ValidityDateText" ColumnName="ValidityDateText" />
+                <ScalarProperty Name="ValidityDate" ColumnName="ValidityDate" />
+                <ScalarProperty Name="Pax_C" ColumnName="Pax_C" />
+                <ScalarProperty Name="ArticleCode" ColumnName="ArticleCode" />
+                <ScalarProperty Name="TCode" ColumnName="TCode" />
+                <ScalarProperty Name="ItemDescription" ColumnName="ItemDescription" />
+                <ScalarProperty Name="ItemNameEpack" ColumnName="ItemNameEpack" />
+                <ScalarProperty Name="ItemName" ColumnName="ItemName" />
+                <ScalarProperty Name="ItemCode" ColumnName="ItemCode" />
+                <ScalarProperty Name="Counter" ColumnName="Counter" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="promoSmartClub">
+            <EntityTypeMapping TypeName="AVEB_ESModel.promoSmartClub">
+              <MappingFragment StoreEntitySet="promoSmartClub">
+                <ScalarProperty Name="idFoto" ColumnName="idFoto" />
+                <ScalarProperty Name="infoPracticas" ColumnName="infoPracticas" />
+                <ScalarProperty Name="masVentajas" ColumnName="masVentajas" />
+                <ScalarProperty Name="restricciones" ColumnName="restricciones" />
+                <ScalarProperty Name="opcion6" ColumnName="opcion6" />
+                <ScalarProperty Name="opcion5" ColumnName="opcion5" />
+                <ScalarProperty Name="opcion4" ColumnName="opcion4" />
+                <ScalarProperty Name="opcion3" ColumnName="opcion3" />
+                <ScalarProperty Name="opcion2" ColumnName="opcion2" />
+                <ScalarProperty Name="opcion1" ColumnName="opcion1" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="sitioWeb" ColumnName="sitioWeb" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+                <ScalarProperty Name="comunidadAutonoma" ColumnName="comunidadAutonoma" />
+                <ScalarProperty Name="provincia" ColumnName="provincia" />
+                <ScalarProperty Name="localidad" ColumnName="localidad" />
+                <ScalarProperty Name="codPostal" ColumnName="codPostal" />
+                <ScalarProperty Name="direccion" ColumnName="direccion" />
+                <ScalarProperty Name="universo" ColumnName="universo" />
+                <ScalarProperty Name="nombreCompany" ColumnName="nombreCompany" />
+                <ScalarProperty Name="num_pagina" ColumnName="num_pagina" />
+                <ScalarProperty Name="ID_Promo" ColumnName="ID_Promo" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="LAVEB_DDBB">
+        <EntityTypeShape EntityType="AVEB_ESModel.GEISIntermediaErratas" Width="1.5" PointX="0.75" PointY="0.75" Height="2.7494921874999996" IsExpanded="true" />
+        <EntityTypeShape EntityType="AVEB_ESModel.GEISIntermediaPacks" Width="1.5" PointX="3.75" PointY="0.75" Height="6.5955208333333335" />
+        <EntityTypeShape EntityType="AVEB_ESModel.GEISIntermediaPacksHidden" Width="1.5" PointX="0.75" PointY="4.75" Height="6.5955208333333317" />
+        <EntityTypeShape EntityType="AVEB_ESModel.promoSmartClub" Width="1.5" PointX="6.375" PointY="0.75" Height="5.4417122395833335" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>
